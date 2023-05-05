@@ -59,11 +59,37 @@ function addUser(newUser) {
 
 const newUser = {
     name: "luiz Henrique",
-    avatar: "https://picsum.photos/200",
+    avatar: "https://picsum.photos/300",
     city: "San Francisco",
 }
 
-addUser(newUser)
+//addUser(newUser)
 
 //fim do enviar dados
 
+
+
+
+
+// METODO PUT MUDAR OS DADOS
+
+function updateUser(updatedUser) {
+    fetch(`${url}/1`, {
+        method: "PUT",
+        body: JSON.stringify(updatedUser),
+        headers: {
+            "content-type": "application/json; charset=UTF-8"
+        }
+    })
+        .then(response => response.json())
+        .then(data => alertApi.textContent = JSON.stringify(data))
+        .catch(error => console.error(error))
+}
+
+const updatedUser = {
+    name: "henrique",
+    avatar: "https://picsum.photos/500",
+    city: "recife",
+}
+
+updateUser(updatedUser);
