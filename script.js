@@ -63,7 +63,7 @@ const newUser = {
     city: "San Francisco",
 }
 
-//addUser(newUser)
+addUser(newUser)
 
 //fim do enviar dados
 
