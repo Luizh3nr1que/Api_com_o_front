@@ -63,7 +63,7 @@ const newUser = {
     city: "San Francisco",
 }
 
-addUser(newUser)
+//addUser(newUser)
 
 //fim do enviar dados
 
@@ -92,4 +92,21 @@ const updatedUser = {
     city: "recife",
 }
 
-updateUser(updatedUser);
+//updateUser(updatedUser);
+
+
+
+// METODO DELETE
+function deletUser(id) {
+    fetch(`${url}/${id}`, {
+        method: "DELETE",
+        headers: {
+            "content-type": "application/json; charset=UTF-8"
+        }
+    })
+        .then(response => response.json())
+        .then(data => alertApi.textContent = data)
+        .catch(error => console.error(error))
+}
+
+deletUser(3)
